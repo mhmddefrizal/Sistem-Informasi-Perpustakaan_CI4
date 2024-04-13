@@ -69,7 +69,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- Messages Dropdown Menu -->
         <li class="nav-item">
           <a class="nav-link" href="<?= base_url('Auth') ?>">
-            <i class="fas fa-user"></i> Login
+            <i class="fas fa-sign-out-alt"></i> Login
           </a>
         </li>
       </ul>
