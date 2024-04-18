@@ -78,4 +78,13 @@ class Auth extends BaseController
         ];
         return view('v_template_login', $data);
     }
+
+    public function LogOut()
+    {
+        session()->remove('nama_user');
+        session()->remove('email');
+        session()->remove('level');
+        session()->setFlashdata('pesan', 'Logout Sukses !');
+        return redirect()->to(base_url('Auth/LoginUser'));
+    }
 }

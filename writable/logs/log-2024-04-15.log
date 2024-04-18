@@ -1,0 +1,9 @@
+CRITICAL - 2024-04-15 08:47:57 --> You must set the database table to be used with your query.
+in SYSTEMPATH\Database\BaseConnection.php on line 874.
+ 1 SYSTEMPATH\Model.php(586): CodeIgniter\Database\BaseConnection->table(null)
+ 2 SYSTEMPATH\Model.php(734): CodeIgniter\Model->builder()
+ 3 APPPATH\Controllers\Kategori.php(24): CodeIgniter\Model->__get('AllData')
+ 4 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Kategori->index()
+ 5 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kategori))
+ 6 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
