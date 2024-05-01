@@ -25,22 +25,22 @@
                 <thead>
                     <tr class="text-center">
                         <th width="50px">No</th>
-                        <th>Nama Kategori</th>
+                        <th>Nama Rak</th>
                         <th width="100px">Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php
                         $no = 1;
-                        foreach ($kategori as $key => $value) { ?>
+                        foreach ($rak as $key => $value) { ?>
                             <tr>
                                 <td><?= $no++?>.</td>
-                                <td><?= $value['nama_kategori'] ?></td>
+                                <td><?= $value['nama_rak'] ?> Lantai <?= $value['lantai_rak'] ?></td>
                                 <td>
-                                  <button type="button" class="btn btn-warning btn-flat btn-sm" data-toggle="modal" data-target="#modal-edit<?= $value['id_kategori'] ?>">
+                                  <button type="button" class="btn btn-warning btn-flat btn-sm" data-toggle="modal" data-target="#modal-edit<?= $value['id_rak'] ?>">
                                     <i class="fas fa-edit"></i>
                                   </button>
-                                  <button type="button" class="btn btn-danger btn-flat btn-sm" data-toggle="modal" data-target="#modal-delete<?= $value['id_kategori'] ?>">
+                                  <button type="button" class="btn btn-danger btn-flat btn-sm" data-toggle="modal" data-target="#modal-delete<?= $value['id_rak'] ?>">
                                     <i class="fas fa-trash"></i>
                                   </button>
                                 </td>
@@ -65,10 +65,15 @@
               </button>
             </div>
             <div class="modal-body">
-              <?php echo form_open(base_url('Kategori/Add'))?>
+              <?php echo form_open(base_url('Rak/AddData'))?>
               <div class="form-group">
-                <label>Nama Kategori</label>
-                <input class="form-control" name="nama_kategori" placeholder="Nama Kategori" required>
+                <label>Nama Rak</label>
+                <input class="form-control" name="nama_rak" placeholder="Nama Rak" required>
+               </div>
+
+               <div class="form-group">
+                <label>Lantai Rak</label>
+                <input type="number" class="form-control" name="lantai_rak" placeholder="Lantai Rak" required>
                </div>
             </div>
             <div class="modal-footer justify-content-between">
@@ -83,8 +88,8 @@
 </div>
 
 <!-- Modal Edit -->
-<?php foreach ($kategori as $key => $value) { ?>
-<div class="modal fade" id="modal-edit<?= $value['id_kategori'] ?>">
+<?php foreach ($rak as $key => $value) { ?>
+<div class="modal fade" id="modal-edit<?= $value['id_rak'] ?>">
         <div class="modal-dialog modal-sm">
           <div class="modal-content">
             <div class="modal-header">
@@ -94,10 +99,15 @@
               </button>
             </div>
             <div class="modal-body">
-              <?php echo form_open(base_url('Kategori/EditData/' . $value['id_kategori']))?>
+              <?php echo form_open(base_url('Rak/EditData/' . $value['id_rak']))?>
               <div class="form-group">
-                <label>Nama Kategori</label>
-                <input class="form-control" value="<?= $value['nama_kategori'] ?>" name="nama_kategori" placeholder="Nama Kategori" required>
+                <label>Nama Rak</label>
+                <input class="form-control" value="<?= $value['nama_rak'] ?>" name="nama_rak" placeholder="Nama Rak" required>
+               </div>
+
+               <div class="form-group">
+                <label>Lantai Rak</label>
+                <input type="number" class="form-control" value="<?= $value['lantai_rak'] ?>" name="lantai_rak" placeholder="Lantai Rak" required>
                </div>
             </div>
             <div class="modal-footer justify-content-between">
@@ -113,8 +123,8 @@
 <?php } ?>
 
 <!-- Modal Delete -->
-<?php foreach ($kategori as $key => $value) { ?>
-<div class="modal fade" id="modal-delete<?= $value['id_kategori'] ?>">
+<?php foreach ($rak as $key => $value) { ?>
+<div class="modal fade" id="modal-delete<?= $value['id_rak'] ?>">
         <div class="modal-dialog modal-sm">
           <div class="modal-content">
             <div class="modal-header">
@@ -124,9 +134,9 @@
               </button>
             </div>
             <div class="modal-body">
-              <?php echo form_open(base_url('Kategori/DeleteData/' . $value['id_kategori']))?>
+              <?php echo form_open(base_url('Rak/DeleteData/' . $value['id_rak']))?>
               <div class="form-group">
-                Apakah Yakin Hapus Data <b><?= $value['nama_kategori'] ?></b> ..?
+                Apakah Yakin Hapus Data <b><?= $value['nama_rak'] ?> Lantai <?= $value['lantai_rak'] ?></b> ..?
                </div>
             </div>
             <div class="modal-footer justify-content-between">

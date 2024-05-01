@@ -50,6 +50,8 @@ class Filters extends BaseConfig
                     '/',
                     'Admin', 'Admin/*',
                     'Kategori', 'Kategori/*',
+                    'Rak', 'Rak/*',
+                    'User', 'User/*',
                 ]
             ],
             'toolbar',

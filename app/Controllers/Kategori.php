@@ -19,6 +19,8 @@ class Kategori extends BaseController
     public function index()
     {
         $data = [
+            'menu' => 'masterdata',
+            'submenu' => 'kategori',
             'judul' => 'Kategori',
             'page' => 'v_kategori',
             'kategori' => $this->ModelKategori->AllData(),
@@ -31,6 +33,25 @@ class Kategori extends BaseController
         $data = ['nama_kategori' => $this->request->getPost('nama_kategori')];
         $this->ModelKategori->Add($data);
         session()->setFlashdata('pesan', 'Data Berhasil Ditambahkan !');
+        return redirect()->to(base_url('Kategori'));
+    }
+
+    public function EditData($id_kategori)
+    {
+        $data = [
+            'id_kategori' => $id_kategori,
+            'nama_kategori' => $this->request->getPost('nama_kategori')
+        ];
+        $this->ModelKategori->EditData($data);
+        session()->setFlashdata('pesan', 'Data Berhasil Diubah !');
+        return redirect()->to(base_url('Kategori'));
+    }
+
+    public function DeleteData($id_kategori)
+    {
+        $data = ['id_kategori' => $id_kategori];
+        $this->ModelKategori->DeleteData($data);
+        session()->setFlashdata('pesan', 'Data Berhasil Dihapus !');
         return redirect()->to(base_url('Kategori'));
     }
 }

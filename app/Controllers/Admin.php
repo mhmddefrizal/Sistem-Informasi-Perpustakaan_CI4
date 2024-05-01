@@ -7,7 +7,9 @@ class Admin extends BaseController
     public function index()
     {
         $data = [
-            'judul' => 'Admin',
+            'menu' => 'dashboard',
+            'submenu' => '',
+            'judul' => 'Dashboard',
             'page' => 'v_admin',
         ];
         return view('v_template_admin', $data);
